@@ -1,0 +1,24 @@
+"use strict";
+
+var _axios = _interopRequireDefault(require("axios"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+const catURL = "https://api.thecatapi.com/v1/images/search";
+
+_axios.default.get(catURL, {
+  params: {
+    breed_ids: "siam"
+  }
+}).then(r => r.data).then(breeds => {
+  console.log(breeds);
+});
+
+let theInput;
+let thebutton;
+theInput = document.querySelector("#userInput > input[type=text]");
+thebutton = document.querySelector("#userInput > button");
+thebutton?.addEventListener("click", () => {
+  const inputLen = theInput?.value.length ?? 0;
+  if (inputLen > 0) console.log("You entered", theInput?.value);else console.log("Please enter some text");
+});
