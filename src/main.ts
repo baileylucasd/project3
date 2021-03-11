@@ -16,7 +16,7 @@ axios
     let thebutton: HTMLButtonElement | null;
     theInput = document.querySelector("#userInput > input[type=text]");
     thebutton = document.querySelector("#userInput > button");
-    
+    console.log("something", thebutton);
     thebutton?.addEventListener("click", () => {
       const inputLen = theInput?.value.length ?? 0;
       if (inputLen > 0)  
